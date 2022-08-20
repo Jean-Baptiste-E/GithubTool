@@ -185,7 +185,7 @@
             this.RepoListBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.RepoListBox.Name = "RepoListBox";
             this.RepoListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.RepoListBox.Size = new System.Drawing.Size(706, 404);
+            this.RepoListBox.Size = new System.Drawing.Size(705, 404);
             this.RepoListBox.TabIndex = 4;
             this.RepoListBox.SelectedIndexChanged += new System.EventHandler(this.RepoListBox_SelectedIndexChanged);
             // 
@@ -1178,7 +1178,7 @@
             this.SelectAllButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.SelectAllButton.Enabled = false;
             this.SelectAllButton.Font = new System.Drawing.Font("Segoe MDL2 Assets", 8.25F);
-            this.SelectAllButton.Location = new System.Drawing.Point(606, 10);
+            this.SelectAllButton.Location = new System.Drawing.Point(605, 10);
             this.SelectAllButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.SelectAllButton.Name = "SelectAllButton";
             this.SelectAllButton.Size = new System.Drawing.Size(33, 31);
@@ -1192,7 +1192,7 @@
             this.ClearSelectionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ClearSelectionButton.Enabled = false;
             this.ClearSelectionButton.Font = new System.Drawing.Font("Segoe MDL2 Assets", 8.25F);
-            this.ClearSelectionButton.Location = new System.Drawing.Point(570, 10);
+            this.ClearSelectionButton.Location = new System.Drawing.Point(569, 10);
             this.ClearSelectionButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ClearSelectionButton.Name = "ClearSelectionButton";
             this.ClearSelectionButton.Size = new System.Drawing.Size(33, 31);
@@ -1206,7 +1206,7 @@
             this.StopProcessButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.StopProcessButton.Enabled = false;
             this.StopProcessButton.Font = new System.Drawing.Font("Segoe MDL2 Assets", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StopProcessButton.Location = new System.Drawing.Point(642, 10);
+            this.StopProcessButton.Location = new System.Drawing.Point(641, 10);
             this.StopProcessButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.StopProcessButton.Name = "StopProcessButton";
             this.StopProcessButton.Size = new System.Drawing.Size(33, 31);
@@ -1227,7 +1227,7 @@
             // TotalItemFoundLabel
             // 
             this.TotalItemFoundLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.TotalItemFoundLabel.Location = new System.Drawing.Point(503, 478);
+            this.TotalItemFoundLabel.Location = new System.Drawing.Point(502, 478);
             this.TotalItemFoundLabel.Name = "TotalItemFoundLabel";
             this.TotalItemFoundLabel.Size = new System.Drawing.Size(203, 16);
             this.TotalItemFoundLabel.TabIndex = 9;
@@ -1313,7 +1313,7 @@
             this.CopyItemAddressButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CopyItemAddressButton.Enabled = false;
             this.CopyItemAddressButton.Font = new System.Drawing.Font("Segoe MDL2 Assets", 8.25F);
-            this.CopyItemAddressButton.Location = new System.Drawing.Point(455, 10);
+            this.CopyItemAddressButton.Location = new System.Drawing.Point(454, 10);
             this.CopyItemAddressButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CopyItemAddressButton.Name = "CopyItemAddressButton";
             this.CopyItemAddressButton.Size = new System.Drawing.Size(33, 31);
@@ -1349,7 +1349,7 @@
             this.LoadButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LoadButton.Enabled = false;
             this.LoadButton.Font = new System.Drawing.Font("Segoe MDL2 Assets", 8.25F);
-            this.LoadButton.Location = new System.Drawing.Point(492, 10);
+            this.LoadButton.Location = new System.Drawing.Point(491, 10);
             this.LoadButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LoadButton.Name = "LoadButton";
             this.LoadButton.Size = new System.Drawing.Size(33, 31);
@@ -1363,7 +1363,7 @@
             this.SaveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.SaveButton.Enabled = false;
             this.SaveButton.Font = new System.Drawing.Font("Segoe MDL2 Assets", 8.25F);
-            this.SaveButton.Location = new System.Drawing.Point(531, 10);
+            this.SaveButton.Location = new System.Drawing.Point(530, 10);
             this.SaveButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(33, 31);
@@ -1385,7 +1385,7 @@
             // 
             this.SpinnerPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.SpinnerPictureBox.Image = global::EtsGitTools.Properties.Resources.spinner;
-            this.SpinnerPictureBox.Location = new System.Drawing.Point(419, 12);
+            this.SpinnerPictureBox.Location = new System.Drawing.Point(418, 12);
             this.SpinnerPictureBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.SpinnerPictureBox.Name = "SpinnerPictureBox";
             this.SpinnerPictureBox.Size = new System.Drawing.Size(33, 25);
@@ -1398,7 +1398,7 @@
             // 
             this.ClearListButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ClearListButton.Enabled = false;
-            this.ClearListButton.Location = new System.Drawing.Point(678, 10);
+            this.ClearListButton.Location = new System.Drawing.Point(677, 10);
             this.ClearListButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ClearListButton.Name = "ClearListButton";
             this.ClearListButton.Size = new System.Drawing.Size(33, 31);

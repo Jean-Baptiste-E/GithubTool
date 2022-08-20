@@ -1513,6 +1513,16 @@ namespace EtsGitTools
             }
         }
 
+        private void GetCodigaRepoBtn_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("clicked");
+
+        }
+
+        private void GetCodigaSelectedRepoAnalysis_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("clicked");
+        }
     }
 
     public class RepoListBoxItem : ICloneable

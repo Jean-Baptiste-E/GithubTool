@@ -116,6 +116,9 @@
             this.ComponentNumberDisplayLabel = new System.Windows.Forms.Label();
             this.GetProjectMeasuresButton = new System.Windows.Forms.Button();
             this.GetListOfSonarCloudProjectsButton = new System.Windows.Forms.Button();
+            this.CodigaTab = new System.Windows.Forms.TabPage();
+            this.GetCodigaSelectedRepoAnalysis = new System.Windows.Forms.Button();
+            this.GetCodigaRepoBtn = new System.Windows.Forms.Button();
             this.SelectAllButton = new System.Windows.Forms.Button();
             this.ClearSelectionButton = new System.Windows.Forms.Button();
             this.StopProcessButton = new System.Windows.Forms.Button();
@@ -139,6 +142,7 @@
             this.ValidationTab.SuspendLayout();
             this.ConfigTab.SuspendLayout();
             this.ReportTab.SuspendLayout();
+            this.CodigaTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -152,10 +156,10 @@
             // LoginButton
             // 
             this.LoginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.LoginButton.Location = new System.Drawing.Point(12, 9);
-            this.LoginButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.LoginButton.Location = new System.Drawing.Point(16, 11);
+            this.LoginButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(25, 23);
+            this.LoginButton.Size = new System.Drawing.Size(33, 28);
             this.LoginButton.TabIndex = 0;
             this.LoginButton.Text = "🔒";
             this.LoginButton.UseVisualStyleBackColor = true;
@@ -164,46 +168,42 @@
             // UserNameLabel
             // 
             this.UserNameLabel.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.UserNameLabel.Location = new System.Drawing.Point(41, 13);
-            this.UserNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.UserNameLabel.Location = new System.Drawing.Point(55, 16);
             this.UserNameLabel.Name = "UserNameLabel";
-            this.UserNameLabel.Size = new System.Drawing.Size(425, 15);
+            this.UserNameLabel.Size = new System.Drawing.Size(567, 18);
             this.UserNameLabel.TabIndex = 1;
             this.UserNameLabel.Text = "Login to use application.";
             this.UserNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // RepoListBox
             // 
-            this.RepoListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.RepoListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.RepoListBox.Font = new System.Drawing.Font("Segoe UI Emoji", 7.25F);
             this.RepoListBox.FormattingEnabled = true;
-            this.RepoListBox.ItemHeight = 14;
-            this.RepoListBox.Location = new System.Drawing.Point(2, 38);
-            this.RepoListBox.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.RepoListBox.ItemHeight = 16;
+            this.RepoListBox.Location = new System.Drawing.Point(3, 47);
+            this.RepoListBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.RepoListBox.Name = "RepoListBox";
             this.RepoListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
-            this.RepoListBox.Size = new System.Drawing.Size(453, 340);
+            this.RepoListBox.Size = new System.Drawing.Size(706, 404);
             this.RepoListBox.TabIndex = 4;
             this.RepoListBox.SelectedIndexChanged += new System.EventHandler(this.RepoListBox_SelectedIndexChanged);
             // 
             // TabControl
             // 
-            this.TabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.TabControl.Controls.Add(this.FetchTab);
             this.TabControl.Controls.Add(this.SearhTab);
             this.TabControl.Controls.Add(this.ValidationTab);
             this.TabControl.Controls.Add(this.ConfigTab);
             this.TabControl.Controls.Add(this.ReportTab);
+            this.TabControl.Controls.Add(this.CodigaTab);
             this.TabControl.Enabled = false;
-            this.TabControl.Location = new System.Drawing.Point(12, 38);
-            this.TabControl.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.TabControl.Location = new System.Drawing.Point(16, 47);
+            this.TabControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TabControl.Name = "TabControl";
             this.TabControl.SelectedIndex = 0;
-            this.TabControl.Size = new System.Drawing.Size(304, 324);
+            this.TabControl.Size = new System.Drawing.Size(297, 399);
             this.TabControl.TabIndex = 5;
             // 
             // FetchTab
@@ -215,11 +215,11 @@
             this.FetchTab.Controls.Add(this.GetListOfRepositoryButton);
             this.FetchTab.Controls.Add(this.RemoveSelectedReposButton);
             this.FetchTab.Controls.Add(this.ForkSelectedRepoButton);
-            this.FetchTab.Location = new System.Drawing.Point(4, 22);
-            this.FetchTab.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.FetchTab.Location = new System.Drawing.Point(4, 25);
+            this.FetchTab.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.FetchTab.Name = "FetchTab";
-            this.FetchTab.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.FetchTab.Size = new System.Drawing.Size(296, 298);
+            this.FetchTab.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.FetchTab.Size = new System.Drawing.Size(289, 370);
             this.FetchTab.TabIndex = 0;
             this.FetchTab.Text = "Repos";
             this.FetchTab.UseVisualStyleBackColor = true;
@@ -228,9 +228,10 @@
             // 
             this.MyOrganizationLabel.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.MyOrganizationLabel.AutoSize = true;
-            this.MyOrganizationLabel.Location = new System.Drawing.Point(5, 134);
+            this.MyOrganizationLabel.Location = new System.Drawing.Point(7, 162);
+            this.MyOrganizationLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MyOrganizationLabel.Name = "MyOrganizationLabel";
-            this.MyOrganizationLabel.Size = new System.Drawing.Size(74, 13);
+            this.MyOrganizationLabel.Size = new System.Drawing.Size(100, 17);
             this.MyOrganizationLabel.TabIndex = 18;
             this.MyOrganizationLabel.Text = "Organizations:";
             // 
@@ -238,9 +239,10 @@
             // 
             this.MyOrganizationCombobox.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.MyOrganizationCombobox.FormattingEnabled = true;
-            this.MyOrganizationCombobox.Location = new System.Drawing.Point(141, 131);
+            this.MyOrganizationCombobox.Location = new System.Drawing.Point(67, 159);
+            this.MyOrganizationCombobox.Margin = new System.Windows.Forms.Padding(4);
             this.MyOrganizationCombobox.Name = "MyOrganizationCombobox";
-            this.MyOrganizationCombobox.Size = new System.Drawing.Size(149, 21);
+            this.MyOrganizationCombobox.Size = new System.Drawing.Size(197, 24);
             this.MyOrganizationCombobox.TabIndex = 17;
             this.MyOrganizationCombobox.SelectedIndexChanged += new System.EventHandler(this.MyOrganizationCombobox_SelectedIndexChanged);
             // 
@@ -248,10 +250,10 @@
             // 
             this.GetListOfOrganizationRepositoryButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.GetListOfOrganizationRepositoryButton.Enabled = false;
-            this.GetListOfOrganizationRepositoryButton.Location = new System.Drawing.Point(8, 36);
-            this.GetListOfOrganizationRepositoryButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.GetListOfOrganizationRepositoryButton.Location = new System.Drawing.Point(11, 42);
+            this.GetListOfOrganizationRepositoryButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.GetListOfOrganizationRepositoryButton.Name = "GetListOfOrganizationRepositoryButton";
-            this.GetListOfOrganizationRepositoryButton.Size = new System.Drawing.Size(282, 23);
+            this.GetListOfOrganizationRepositoryButton.Size = new System.Drawing.Size(255, 28);
             this.GetListOfOrganizationRepositoryButton.TabIndex = 16;
             this.GetListOfOrganizationRepositoryButton.Text = "Get My Organization Repositories";
             this.GetListOfOrganizationRepositoryButton.UseVisualStyleBackColor = true;
@@ -260,10 +262,10 @@
             // GetOrgButton
             // 
             this.GetOrgButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.GetOrgButton.Location = new System.Drawing.Point(8, 101);
-            this.GetOrgButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.GetOrgButton.Location = new System.Drawing.Point(11, 122);
+            this.GetOrgButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.GetOrgButton.Name = "GetOrgButton";
-            this.GetOrgButton.Size = new System.Drawing.Size(282, 23);
+            this.GetOrgButton.Size = new System.Drawing.Size(255, 28);
             this.GetOrgButton.TabIndex = 15;
             this.GetOrgButton.Text = "Get My Organization";
             this.GetOrgButton.UseVisualStyleBackColor = true;
@@ -272,10 +274,10 @@
             // GetListOfRepositoryButton
             // 
             this.GetListOfRepositoryButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.GetListOfRepositoryButton.Location = new System.Drawing.Point(8, 7);
-            this.GetListOfRepositoryButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.GetListOfRepositoryButton.Location = new System.Drawing.Point(11, 6);
+            this.GetListOfRepositoryButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.GetListOfRepositoryButton.Name = "GetListOfRepositoryButton";
-            this.GetListOfRepositoryButton.Size = new System.Drawing.Size(282, 23);
+            this.GetListOfRepositoryButton.Size = new System.Drawing.Size(255, 28);
             this.GetListOfRepositoryButton.TabIndex = 14;
             this.GetListOfRepositoryButton.Text = "Get All My Repositories";
             this.GetListOfRepositoryButton.UseVisualStyleBackColor = true;
@@ -285,10 +287,10 @@
             // 
             this.RemoveSelectedReposButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.RemoveSelectedReposButton.ForeColor = System.Drawing.Color.Maroon;
-            this.RemoveSelectedReposButton.Location = new System.Drawing.Point(8, 268);
-            this.RemoveSelectedReposButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.RemoveSelectedReposButton.Location = new System.Drawing.Point(11, 327);
+            this.RemoveSelectedReposButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.RemoveSelectedReposButton.Name = "RemoveSelectedReposButton";
-            this.RemoveSelectedReposButton.Size = new System.Drawing.Size(282, 23);
+            this.RemoveSelectedReposButton.Size = new System.Drawing.Size(255, 28);
             this.RemoveSelectedReposButton.TabIndex = 13;
             this.RemoveSelectedReposButton.Text = "Remove selected repos";
             this.RemoveSelectedReposButton.UseVisualStyleBackColor = true;
@@ -297,10 +299,10 @@
             // ForkSelectedRepoButton
             // 
             this.ForkSelectedRepoButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.ForkSelectedRepoButton.Location = new System.Drawing.Point(8, 231);
-            this.ForkSelectedRepoButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.ForkSelectedRepoButton.Location = new System.Drawing.Point(11, 282);
+            this.ForkSelectedRepoButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ForkSelectedRepoButton.Name = "ForkSelectedRepoButton";
-            this.ForkSelectedRepoButton.Size = new System.Drawing.Size(282, 23);
+            this.ForkSelectedRepoButton.Size = new System.Drawing.Size(255, 28);
             this.ForkSelectedRepoButton.TabIndex = 10;
             this.ForkSelectedRepoButton.Text = "Frok selected repos into remote account";
             this.ForkSelectedRepoButton.UseVisualStyleBackColor = true;
@@ -346,11 +348,11 @@
             this.SearhTab.Controls.Add(this.CreationDateMaxLabel);
             this.SearhTab.Controls.Add(this.MaxSizeLabel);
             this.SearhTab.Controls.Add(this.MaxStarsLabel);
-            this.SearhTab.Location = new System.Drawing.Point(4, 22);
-            this.SearhTab.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.SearhTab.Location = new System.Drawing.Point(4, 25);
+            this.SearhTab.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.SearhTab.Name = "SearhTab";
-            this.SearhTab.Padding = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.SearhTab.Size = new System.Drawing.Size(296, 298);
+            this.SearhTab.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.SearhTab.Size = new System.Drawing.Size(289, 370);
             this.SearhTab.TabIndex = 1;
             this.SearhTab.Text = "Search";
             this.SearhTab.UseVisualStyleBackColor = true;
@@ -360,10 +362,10 @@
             this.ReadmeCheckBox.AutoSize = true;
             this.ReadmeCheckBox.Checked = true;
             this.ReadmeCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ReadmeCheckBox.Location = new System.Drawing.Point(220, 91);
-            this.ReadmeCheckBox.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.ReadmeCheckBox.Location = new System.Drawing.Point(293, 112);
+            this.ReadmeCheckBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ReadmeCheckBox.Name = "ReadmeCheckBox";
-            this.ReadmeCheckBox.Size = new System.Drawing.Size(61, 17);
+            this.ReadmeCheckBox.Size = new System.Drawing.Size(78, 21);
             this.ReadmeCheckBox.TabIndex = 37;
             this.ReadmeCheckBox.Text = "readme";
             this.ReadmeCheckBox.UseVisualStyleBackColor = true;
@@ -373,10 +375,10 @@
             this.DescriptionCheckBox.AutoSize = true;
             this.DescriptionCheckBox.Checked = true;
             this.DescriptionCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.DescriptionCheckBox.Location = new System.Drawing.Point(151, 91);
-            this.DescriptionCheckBox.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.DescriptionCheckBox.Location = new System.Drawing.Point(201, 112);
+            this.DescriptionCheckBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DescriptionCheckBox.Name = "DescriptionCheckBox";
-            this.DescriptionCheckBox.Size = new System.Drawing.Size(49, 17);
+            this.DescriptionCheckBox.Size = new System.Drawing.Size(60, 21);
             this.DescriptionCheckBox.TabIndex = 36;
             this.DescriptionCheckBox.Text = "desc";
             this.DescriptionCheckBox.UseVisualStyleBackColor = true;
@@ -386,10 +388,10 @@
             this.NameCheckBox.AutoSize = true;
             this.NameCheckBox.Checked = true;
             this.NameCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.NameCheckBox.Location = new System.Drawing.Point(84, 91);
-            this.NameCheckBox.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.NameCheckBox.Location = new System.Drawing.Point(112, 112);
+            this.NameCheckBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.NameCheckBox.Name = "NameCheckBox";
-            this.NameCheckBox.Size = new System.Drawing.Size(52, 17);
+            this.NameCheckBox.Size = new System.Drawing.Size(65, 21);
             this.NameCheckBox.TabIndex = 35;
             this.NameCheckBox.Text = "name";
             this.NameCheckBox.UseVisualStyleBackColor = true;
@@ -397,28 +399,27 @@
             // ContentLabel
             // 
             this.ContentLabel.AutoSize = true;
-            this.ContentLabel.Location = new System.Drawing.Point(8, 68);
-            this.ContentLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ContentLabel.Location = new System.Drawing.Point(11, 84);
             this.ContentLabel.Name = "ContentLabel";
-            this.ContentLabel.Size = new System.Drawing.Size(44, 13);
+            this.ContentLabel.Size = new System.Drawing.Size(57, 17);
             this.ContentLabel.TabIndex = 33;
             this.ContentLabel.Text = "Content";
             // 
             // ContentTextbox
             // 
             this.ContentTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ContentTextbox.Location = new System.Drawing.Point(84, 65);
-            this.ContentTextbox.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.ContentTextbox.Location = new System.Drawing.Point(112, 80);
+            this.ContentTextbox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ContentTextbox.Name = "ContentTextbox";
-            this.ContentTextbox.Size = new System.Drawing.Size(197, 20);
+            this.ContentTextbox.Size = new System.Drawing.Size(262, 22);
             this.ContentTextbox.TabIndex = 2;
             // 
             // ClearInputsButton
             // 
-            this.ClearInputsButton.Location = new System.Drawing.Point(174, 240);
-            this.ClearInputsButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.ClearInputsButton.Location = new System.Drawing.Point(232, 295);
+            this.ClearInputsButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ClearInputsButton.Name = "ClearInputsButton";
-            this.ClearInputsButton.Size = new System.Drawing.Size(107, 23);
+            this.ClearInputsButton.Size = new System.Drawing.Size(143, 28);
             this.ClearInputsButton.TabIndex = 17;
             this.ClearInputsButton.Text = "Clear All";
             this.ClearInputsButton.UseVisualStyleBackColor = true;
@@ -429,10 +430,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label2.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label2.Location = new System.Drawing.Point(45, 272);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(60, 335);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(205, 13);
+            this.label2.Size = new System.Drawing.Size(275, 17);
             this.label2.TabIndex = 30;
             this.label2.Text = "Five or less criteria can be used in search.";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -440,78 +440,74 @@
             // SearchLocationLabel
             // 
             this.SearchLocationLabel.AutoSize = true;
-            this.SearchLocationLabel.Location = new System.Drawing.Point(8, 93);
-            this.SearchLocationLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.SearchLocationLabel.Location = new System.Drawing.Point(11, 114);
             this.SearchLocationLabel.Name = "SearchLocationLabel";
-            this.SearchLocationLabel.Size = new System.Drawing.Size(69, 13);
+            this.SearchLocationLabel.Size = new System.Drawing.Size(91, 17);
             this.SearchLocationLabel.TabIndex = 34;
             this.SearchLocationLabel.Text = "Search Area:";
             // 
             // LanguageLabel
             // 
             this.LanguageLabel.AutoSize = true;
-            this.LanguageLabel.Location = new System.Drawing.Point(8, 44);
-            this.LanguageLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LanguageLabel.Location = new System.Drawing.Point(11, 54);
             this.LanguageLabel.Name = "LanguageLabel";
-            this.LanguageLabel.Size = new System.Drawing.Size(58, 13);
+            this.LanguageLabel.Size = new System.Drawing.Size(76, 17);
             this.LanguageLabel.TabIndex = 29;
             this.LanguageLabel.Text = "Language:";
             // 
             // LanguageTextbox
             // 
             this.LanguageTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LanguageTextbox.Location = new System.Drawing.Point(84, 40);
-            this.LanguageTextbox.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.LanguageTextbox.Location = new System.Drawing.Point(112, 49);
+            this.LanguageTextbox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LanguageTextbox.Name = "LanguageTextbox";
-            this.LanguageTextbox.Size = new System.Drawing.Size(197, 20);
+            this.LanguageTextbox.Size = new System.Drawing.Size(262, 22);
             this.LanguageTextbox.TabIndex = 1;
             // 
             // NumberOfForksMinLabel
             // 
             this.NumberOfForksMinLabel.AutoSize = true;
-            this.NumberOfForksMinLabel.Location = new System.Drawing.Point(84, 168);
-            this.NumberOfForksMinLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.NumberOfForksMinLabel.Location = new System.Drawing.Point(112, 207);
             this.NumberOfForksMinLabel.Name = "NumberOfForksMinLabel";
-            this.NumberOfForksMinLabel.Size = new System.Drawing.Size(24, 13);
+            this.NumberOfForksMinLabel.Size = new System.Drawing.Size(30, 17);
             this.NumberOfForksMinLabel.TabIndex = 27;
             this.NumberOfForksMinLabel.Text = "Min";
             // 
             // ForkLabel
             // 
             this.ForkLabel.AutoSize = true;
-            this.ForkLabel.Location = new System.Drawing.Point(8, 168);
-            this.ForkLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ForkLabel.Location = new System.Drawing.Point(11, 207);
             this.ForkLabel.Name = "ForkLabel";
-            this.ForkLabel.Size = new System.Drawing.Size(36, 13);
+            this.ForkLabel.Size = new System.Drawing.Size(47, 17);
             this.ForkLabel.TabIndex = 25;
             this.ForkLabel.Text = "Forks:";
             // 
             // NumberOfForksMaxTextBox
             // 
             this.NumberOfForksMaxTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.NumberOfForksMaxTextBox.Location = new System.Drawing.Point(210, 164);
-            this.NumberOfForksMaxTextBox.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.NumberOfForksMaxTextBox.Location = new System.Drawing.Point(280, 202);
+            this.NumberOfForksMaxTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.NumberOfForksMaxTextBox.Name = "NumberOfForksMaxTextBox";
-            this.NumberOfForksMaxTextBox.Size = new System.Drawing.Size(71, 20);
+            this.NumberOfForksMaxTextBox.Size = new System.Drawing.Size(94, 22);
             this.NumberOfForksMaxTextBox.TabIndex = 8;
             this.NumberOfForksMaxTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressHandler);
             // 
             // NumberOfForksMinTextBox
             // 
             this.NumberOfForksMinTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.NumberOfForksMinTextBox.Location = new System.Drawing.Point(109, 164);
-            this.NumberOfForksMinTextBox.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.NumberOfForksMinTextBox.Location = new System.Drawing.Point(145, 202);
+            this.NumberOfForksMinTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.NumberOfForksMinTextBox.Name = "NumberOfForksMinTextBox";
-            this.NumberOfForksMinTextBox.Size = new System.Drawing.Size(71, 20);
+            this.NumberOfForksMinTextBox.Size = new System.Drawing.Size(94, 22);
             this.NumberOfForksMinTextBox.TabIndex = 7;
             this.NumberOfForksMinTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressHandler);
             // 
             // SearchButton
             // 
-            this.SearchButton.Location = new System.Drawing.Point(11, 240);
-            this.SearchButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.SearchButton.Location = new System.Drawing.Point(15, 295);
+            this.SearchButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(107, 23);
+            this.SearchButton.Size = new System.Drawing.Size(143, 28);
             this.SearchButton.TabIndex = 16;
             this.SearchButton.Text = "Search";
             this.SearchButton.UseVisualStyleBackColor = true;
@@ -519,226 +515,212 @@
             // 
             // LastUpdateDateMaxDateTimePicker
             // 
-            this.LastUpdateDateMaxDateTimePicker.Location = new System.Drawing.Point(210, 215);
-            this.LastUpdateDateMaxDateTimePicker.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.LastUpdateDateMaxDateTimePicker.Location = new System.Drawing.Point(280, 265);
+            this.LastUpdateDateMaxDateTimePicker.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LastUpdateDateMaxDateTimePicker.Name = "LastUpdateDateMaxDateTimePicker";
-            this.LastUpdateDateMaxDateTimePicker.Size = new System.Drawing.Size(71, 20);
+            this.LastUpdateDateMaxDateTimePicker.Size = new System.Drawing.Size(93, 22);
             this.LastUpdateDateMaxDateTimePicker.TabIndex = 12;
             this.LastUpdateDateMaxDateTimePicker.Value = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             // 
             // CreationDateMaxDateTimePicker
             // 
-            this.CreationDateMaxDateTimePicker.Location = new System.Drawing.Point(210, 190);
-            this.CreationDateMaxDateTimePicker.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.CreationDateMaxDateTimePicker.Location = new System.Drawing.Point(280, 234);
+            this.CreationDateMaxDateTimePicker.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CreationDateMaxDateTimePicker.Name = "CreationDateMaxDateTimePicker";
-            this.CreationDateMaxDateTimePicker.Size = new System.Drawing.Size(71, 20);
+            this.CreationDateMaxDateTimePicker.Size = new System.Drawing.Size(93, 22);
             this.CreationDateMaxDateTimePicker.TabIndex = 10;
             this.CreationDateMaxDateTimePicker.Value = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             // 
             // LastUpdateDateMinLabel
             // 
             this.LastUpdateDateMinLabel.AutoSize = true;
-            this.LastUpdateDateMinLabel.Location = new System.Drawing.Point(84, 219);
-            this.LastUpdateDateMinLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LastUpdateDateMinLabel.Location = new System.Drawing.Point(112, 270);
             this.LastUpdateDateMinLabel.Name = "LastUpdateDateMinLabel";
-            this.LastUpdateDateMinLabel.Size = new System.Drawing.Size(24, 13);
+            this.LastUpdateDateMinLabel.Size = new System.Drawing.Size(30, 17);
             this.LastUpdateDateMinLabel.TabIndex = 18;
             this.LastUpdateDateMinLabel.Text = "Min";
             // 
             // CreationDateMinLabel
             // 
             this.CreationDateMinLabel.AutoSize = true;
-            this.CreationDateMinLabel.Location = new System.Drawing.Point(84, 194);
-            this.CreationDateMinLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.CreationDateMinLabel.Location = new System.Drawing.Point(112, 239);
             this.CreationDateMinLabel.Name = "CreationDateMinLabel";
-            this.CreationDateMinLabel.Size = new System.Drawing.Size(24, 13);
+            this.CreationDateMinLabel.Size = new System.Drawing.Size(30, 17);
             this.CreationDateMinLabel.TabIndex = 18;
             this.CreationDateMinLabel.Text = "Min";
             // 
             // LastUpdateDateMinDateTimePicker
             // 
-            this.LastUpdateDateMinDateTimePicker.Location = new System.Drawing.Point(109, 215);
-            this.LastUpdateDateMinDateTimePicker.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.LastUpdateDateMinDateTimePicker.Location = new System.Drawing.Point(145, 265);
+            this.LastUpdateDateMinDateTimePicker.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LastUpdateDateMinDateTimePicker.Name = "LastUpdateDateMinDateTimePicker";
-            this.LastUpdateDateMinDateTimePicker.Size = new System.Drawing.Size(71, 20);
+            this.LastUpdateDateMinDateTimePicker.Size = new System.Drawing.Size(93, 22);
             this.LastUpdateDateMinDateTimePicker.TabIndex = 11;
             this.LastUpdateDateMinDateTimePicker.Value = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             // 
             // CreationDateMinDateTimePicker
             // 
-            this.CreationDateMinDateTimePicker.Location = new System.Drawing.Point(109, 190);
-            this.CreationDateMinDateTimePicker.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.CreationDateMinDateTimePicker.Location = new System.Drawing.Point(145, 234);
+            this.CreationDateMinDateTimePicker.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CreationDateMinDateTimePicker.Name = "CreationDateMinDateTimePicker";
-            this.CreationDateMinDateTimePicker.Size = new System.Drawing.Size(71, 20);
+            this.CreationDateMinDateTimePicker.Size = new System.Drawing.Size(93, 22);
             this.CreationDateMinDateTimePicker.TabIndex = 9;
             this.CreationDateMinDateTimePicker.Value = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             // 
             // LastUpdateDateLabel
             // 
             this.LastUpdateDateLabel.AutoSize = true;
-            this.LastUpdateDateLabel.Location = new System.Drawing.Point(8, 218);
-            this.LastUpdateDateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LastUpdateDateLabel.Location = new System.Drawing.Point(11, 268);
             this.LastUpdateDateLabel.Name = "LastUpdateDateLabel";
-            this.LastUpdateDateLabel.Size = new System.Drawing.Size(71, 13);
+            this.LastUpdateDateLabel.Size = new System.Drawing.Size(92, 17);
             this.LastUpdateDateLabel.TabIndex = 16;
             this.LastUpdateDateLabel.Text = "Update Date:";
             // 
             // CreationDateLabel
             // 
             this.CreationDateLabel.AutoSize = true;
-            this.CreationDateLabel.Location = new System.Drawing.Point(8, 193);
-            this.CreationDateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.CreationDateLabel.Location = new System.Drawing.Point(11, 238);
             this.CreationDateLabel.Name = "CreationDateLabel";
-            this.CreationDateLabel.Size = new System.Drawing.Size(67, 13);
+            this.CreationDateLabel.Size = new System.Drawing.Size(88, 17);
             this.CreationDateLabel.TabIndex = 15;
             this.CreationDateLabel.Text = "Create Date:";
             // 
             // MinSizeLabel
             // 
             this.MinSizeLabel.AutoSize = true;
-            this.MinSizeLabel.Location = new System.Drawing.Point(84, 143);
-            this.MinSizeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.MinSizeLabel.Location = new System.Drawing.Point(112, 176);
             this.MinSizeLabel.Name = "MinSizeLabel";
-            this.MinSizeLabel.Size = new System.Drawing.Size(24, 13);
+            this.MinSizeLabel.Size = new System.Drawing.Size(30, 17);
             this.MinSizeLabel.TabIndex = 9;
             this.MinSizeLabel.Text = "Min";
             // 
             // SizeLabel
             // 
             this.SizeLabel.AutoSize = true;
-            this.SizeLabel.Location = new System.Drawing.Point(8, 143);
-            this.SizeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.SizeLabel.Location = new System.Drawing.Point(11, 176);
             this.SizeLabel.Name = "SizeLabel";
-            this.SizeLabel.Size = new System.Drawing.Size(51, 13);
+            this.SizeLabel.Size = new System.Drawing.Size(68, 17);
             this.SizeLabel.TabIndex = 6;
             this.SizeLabel.Text = "Size: (kb)";
             // 
             // MaxSizeTextbox
             // 
             this.MaxSizeTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MaxSizeTextbox.Location = new System.Drawing.Point(210, 139);
-            this.MaxSizeTextbox.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.MaxSizeTextbox.Location = new System.Drawing.Point(280, 171);
+            this.MaxSizeTextbox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaxSizeTextbox.Name = "MaxSizeTextbox";
-            this.MaxSizeTextbox.Size = new System.Drawing.Size(71, 20);
+            this.MaxSizeTextbox.Size = new System.Drawing.Size(94, 22);
             this.MaxSizeTextbox.TabIndex = 6;
             this.MaxSizeTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressHandler);
             // 
             // MaxStarTextbox
             // 
             this.MaxStarTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MaxStarTextbox.Location = new System.Drawing.Point(210, 114);
-            this.MaxStarTextbox.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.MaxStarTextbox.Location = new System.Drawing.Point(280, 140);
+            this.MaxStarTextbox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaxStarTextbox.Name = "MaxStarTextbox";
-            this.MaxStarTextbox.Size = new System.Drawing.Size(71, 20);
+            this.MaxStarTextbox.Size = new System.Drawing.Size(94, 22);
             this.MaxStarTextbox.TabIndex = 4;
             this.MaxStarTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressHandler);
             // 
             // MinStarsLabel
             // 
             this.MinStarsLabel.AutoSize = true;
-            this.MinStarsLabel.Location = new System.Drawing.Point(84, 118);
-            this.MinStarsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.MinStarsLabel.Location = new System.Drawing.Point(112, 145);
             this.MinStarsLabel.Name = "MinStarsLabel";
-            this.MinStarsLabel.Size = new System.Drawing.Size(24, 13);
+            this.MinStarsLabel.Size = new System.Drawing.Size(30, 17);
             this.MinStarsLabel.TabIndex = 4;
             this.MinStarsLabel.Text = "Min";
             // 
             // MinSizeTextbox
             // 
             this.MinSizeTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MinSizeTextbox.Location = new System.Drawing.Point(109, 139);
-            this.MinSizeTextbox.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.MinSizeTextbox.Location = new System.Drawing.Point(145, 171);
+            this.MinSizeTextbox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MinSizeTextbox.Name = "MinSizeTextbox";
-            this.MinSizeTextbox.Size = new System.Drawing.Size(71, 20);
+            this.MinSizeTextbox.Size = new System.Drawing.Size(94, 22);
             this.MinSizeTextbox.TabIndex = 5;
             this.MinSizeTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressHandler);
             // 
             // MinStarTextbox
             // 
             this.MinStarTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MinStarTextbox.Location = new System.Drawing.Point(109, 114);
-            this.MinStarTextbox.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.MinStarTextbox.Location = new System.Drawing.Point(145, 140);
+            this.MinStarTextbox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MinStarTextbox.Name = "MinStarTextbox";
-            this.MinStarTextbox.Size = new System.Drawing.Size(71, 20);
+            this.MinStarTextbox.Size = new System.Drawing.Size(94, 22);
             this.MinStarTextbox.TabIndex = 3;
             this.MinStarTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPressHandler);
             // 
             // StarsLabel
             // 
             this.StarsLabel.AutoSize = true;
-            this.StarsLabel.Location = new System.Drawing.Point(8, 118);
-            this.StarsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.StarsLabel.Location = new System.Drawing.Point(11, 145);
             this.StarsLabel.Name = "StarsLabel";
-            this.StarsLabel.Size = new System.Drawing.Size(34, 13);
+            this.StarsLabel.Size = new System.Drawing.Size(45, 17);
             this.StarsLabel.TabIndex = 2;
             this.StarsLabel.Text = "Stars:";
             // 
             // KeywordLabel
             // 
             this.KeywordLabel.AutoSize = true;
-            this.KeywordLabel.Location = new System.Drawing.Point(8, 20);
-            this.KeywordLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.KeywordLabel.Location = new System.Drawing.Point(11, 25);
             this.KeywordLabel.Name = "KeywordLabel";
-            this.KeywordLabel.Size = new System.Drawing.Size(51, 13);
+            this.KeywordLabel.Size = new System.Drawing.Size(66, 17);
             this.KeywordLabel.TabIndex = 1;
             this.KeywordLabel.Text = "Keyword:";
             // 
             // QueryTextbox
             // 
             this.QueryTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.QueryTextbox.Location = new System.Drawing.Point(84, 15);
-            this.QueryTextbox.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.QueryTextbox.Location = new System.Drawing.Point(112, 18);
+            this.QueryTextbox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.QueryTextbox.Name = "QueryTextbox";
-            this.QueryTextbox.Size = new System.Drawing.Size(197, 20);
+            this.QueryTextbox.Size = new System.Drawing.Size(262, 22);
             this.QueryTextbox.TabIndex = 0;
             // 
             // NumberOfForksMaxLabel
             // 
             this.NumberOfForksMaxLabel.AutoSize = true;
-            this.NumberOfForksMaxLabel.Location = new System.Drawing.Point(184, 168);
-            this.NumberOfForksMaxLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.NumberOfForksMaxLabel.Location = new System.Drawing.Point(245, 207);
             this.NumberOfForksMaxLabel.Name = "NumberOfForksMaxLabel";
-            this.NumberOfForksMaxLabel.Size = new System.Drawing.Size(27, 13);
+            this.NumberOfForksMaxLabel.Size = new System.Drawing.Size(33, 17);
             this.NumberOfForksMaxLabel.TabIndex = 26;
             this.NumberOfForksMaxLabel.Text = "Max";
             // 
             // LastUpdateDateMaxLabel
             // 
             this.LastUpdateDateMaxLabel.AutoSize = true;
-            this.LastUpdateDateMaxLabel.Location = new System.Drawing.Point(184, 219);
-            this.LastUpdateDateMaxLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.LastUpdateDateMaxLabel.Location = new System.Drawing.Point(245, 270);
             this.LastUpdateDateMaxLabel.Name = "LastUpdateDateMaxLabel";
-            this.LastUpdateDateMaxLabel.Size = new System.Drawing.Size(27, 13);
+            this.LastUpdateDateMaxLabel.Size = new System.Drawing.Size(33, 17);
             this.LastUpdateDateMaxLabel.TabIndex = 20;
             this.LastUpdateDateMaxLabel.Text = "Max";
             // 
             // CreationDateMaxLabel
             // 
             this.CreationDateMaxLabel.AutoSize = true;
-            this.CreationDateMaxLabel.Location = new System.Drawing.Point(184, 194);
-            this.CreationDateMaxLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.CreationDateMaxLabel.Location = new System.Drawing.Point(245, 239);
             this.CreationDateMaxLabel.Name = "CreationDateMaxLabel";
-            this.CreationDateMaxLabel.Size = new System.Drawing.Size(27, 13);
+            this.CreationDateMaxLabel.Size = new System.Drawing.Size(33, 17);
             this.CreationDateMaxLabel.TabIndex = 20;
             this.CreationDateMaxLabel.Text = "Max";
             // 
             // MaxSizeLabel
             // 
             this.MaxSizeLabel.AutoSize = true;
-            this.MaxSizeLabel.Location = new System.Drawing.Point(184, 143);
-            this.MaxSizeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.MaxSizeLabel.Location = new System.Drawing.Point(245, 176);
             this.MaxSizeLabel.Name = "MaxSizeLabel";
-            this.MaxSizeLabel.Size = new System.Drawing.Size(27, 13);
+            this.MaxSizeLabel.Size = new System.Drawing.Size(33, 17);
             this.MaxSizeLabel.TabIndex = 8;
             this.MaxSizeLabel.Text = "Max";
             // 
             // MaxStarsLabel
             // 
             this.MaxStarsLabel.AutoSize = true;
-            this.MaxStarsLabel.Location = new System.Drawing.Point(184, 118);
-            this.MaxStarsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.MaxStarsLabel.Location = new System.Drawing.Point(245, 145);
             this.MaxStarsLabel.Name = "MaxStarsLabel";
-            this.MaxStarsLabel.Size = new System.Drawing.Size(27, 13);
+            this.MaxStarsLabel.Size = new System.Drawing.Size(33, 17);
             this.MaxStarsLabel.TabIndex = 4;
             this.MaxStarsLabel.Text = "Max";
             // 
@@ -751,19 +733,20 @@
             this.ValidationTab.Controls.Add(this.ValidateOnFileNameLabel);
             this.ValidationTab.Controls.Add(this.ValidateOnFileNameTextBox);
             this.ValidationTab.Controls.Add(this.ValidationResultButton);
-            this.ValidationTab.Location = new System.Drawing.Point(4, 22);
+            this.ValidationTab.Location = new System.Drawing.Point(4, 25);
+            this.ValidationTab.Margin = new System.Windows.Forms.Padding(4);
             this.ValidationTab.Name = "ValidationTab";
-            this.ValidationTab.Size = new System.Drawing.Size(296, 298);
+            this.ValidationTab.Size = new System.Drawing.Size(289, 370);
             this.ValidationTab.TabIndex = 3;
             this.ValidationTab.Text = "Validation";
             this.ValidationTab.UseVisualStyleBackColor = true;
             // 
             // SelectInValidRepoButton
             // 
-            this.SelectInValidRepoButton.Location = new System.Drawing.Point(7, 268);
-            this.SelectInValidRepoButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.SelectInValidRepoButton.Location = new System.Drawing.Point(9, 330);
+            this.SelectInValidRepoButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.SelectInValidRepoButton.Name = "SelectInValidRepoButton";
-            this.SelectInValidRepoButton.Size = new System.Drawing.Size(277, 23);
+            this.SelectInValidRepoButton.Size = new System.Drawing.Size(369, 28);
             this.SelectInValidRepoButton.TabIndex = 29;
             this.SelectInValidRepoButton.Text = "Select Invalid Repositories";
             this.SelectInValidRepoButton.UseVisualStyleBackColor = true;
@@ -771,10 +754,10 @@
             // 
             // SelectValidRepo
             // 
-            this.SelectValidRepo.Location = new System.Drawing.Point(7, 241);
-            this.SelectValidRepo.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.SelectValidRepo.Location = new System.Drawing.Point(9, 297);
+            this.SelectValidRepo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.SelectValidRepo.Name = "SelectValidRepo";
-            this.SelectValidRepo.Size = new System.Drawing.Size(277, 23);
+            this.SelectValidRepo.Size = new System.Drawing.Size(369, 28);
             this.SelectValidRepo.TabIndex = 28;
             this.SelectValidRepo.Text = "Select Valid Repositories";
             this.SelectValidRepo.UseVisualStyleBackColor = true;
@@ -783,52 +766,47 @@
             // TargetFrameworkCombobox
             // 
             this.TargetFrameworkCombobox.FormattingEnabled = true;
-            this.TargetFrameworkCombobox.Items.AddRange(new object[] {
-            "Android Native",
-            "iOS Native",
-            "ReactNative",
-            "Other"});
-            this.TargetFrameworkCombobox.Location = new System.Drawing.Point(117, 11);
+            this.TargetFrameworkCombobox.Items.AddRange(new object[] { "Android Native", "iOS Native", "ReactNative", "Other" });
+            this.TargetFrameworkCombobox.Location = new System.Drawing.Point(156, 14);
+            this.TargetFrameworkCombobox.Margin = new System.Windows.Forms.Padding(4);
             this.TargetFrameworkCombobox.Name = "TargetFrameworkCombobox";
-            this.TargetFrameworkCombobox.Size = new System.Drawing.Size(167, 21);
+            this.TargetFrameworkCombobox.Size = new System.Drawing.Size(221, 24);
             this.TargetFrameworkCombobox.TabIndex = 27;
             this.TargetFrameworkCombobox.SelectedValueChanged += new System.EventHandler(this.TargetFrameworkCombobox_SelectedValueChanged);
             // 
             // FrameworkLabel
             // 
             this.FrameworkLabel.AutoSize = true;
-            this.FrameworkLabel.Location = new System.Drawing.Point(7, 13);
-            this.FrameworkLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.FrameworkLabel.Location = new System.Drawing.Point(9, 16);
             this.FrameworkLabel.Name = "FrameworkLabel";
-            this.FrameworkLabel.Size = new System.Drawing.Size(96, 13);
+            this.FrameworkLabel.Size = new System.Drawing.Size(127, 17);
             this.FrameworkLabel.TabIndex = 26;
             this.FrameworkLabel.Text = "Target Framework:";
             // 
             // ValidateOnFileNameLabel
             // 
             this.ValidateOnFileNameLabel.AutoSize = true;
-            this.ValidateOnFileNameLabel.Location = new System.Drawing.Point(7, 40);
-            this.ValidateOnFileNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ValidateOnFileNameLabel.Location = new System.Drawing.Point(9, 49);
             this.ValidateOnFileNameLabel.Name = "ValidateOnFileNameLabel";
-            this.ValidateOnFileNameLabel.Size = new System.Drawing.Size(54, 13);
+            this.ValidateOnFileNameLabel.Size = new System.Drawing.Size(71, 17);
             this.ValidateOnFileNameLabel.TabIndex = 25;
             this.ValidateOnFileNameLabel.Text = "FileName:";
             // 
             // ValidateOnFileNameTextBox
             // 
             this.ValidateOnFileNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ValidateOnFileNameTextBox.Location = new System.Drawing.Point(117, 38);
-            this.ValidateOnFileNameTextBox.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.ValidateOnFileNameTextBox.Location = new System.Drawing.Point(156, 47);
+            this.ValidateOnFileNameTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ValidateOnFileNameTextBox.Name = "ValidateOnFileNameTextBox";
-            this.ValidateOnFileNameTextBox.Size = new System.Drawing.Size(167, 20);
+            this.ValidateOnFileNameTextBox.Size = new System.Drawing.Size(222, 22);
             this.ValidateOnFileNameTextBox.TabIndex = 24;
             // 
             // ValidationResultButton
             // 
-            this.ValidationResultButton.Location = new System.Drawing.Point(7, 212);
-            this.ValidationResultButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.ValidationResultButton.Location = new System.Drawing.Point(9, 261);
+            this.ValidationResultButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ValidationResultButton.Name = "ValidationResultButton";
-            this.ValidationResultButton.Size = new System.Drawing.Size(277, 23);
+            this.ValidationResultButton.Size = new System.Drawing.Size(369, 28);
             this.ValidationResultButton.TabIndex = 17;
             this.ValidationResultButton.Text = "Validate Result";
             this.ValidationResultButton.UseVisualStyleBackColor = true;
@@ -849,20 +827,21 @@
             this.ConfigTab.Controls.Add(this.DeleteSonarCloudExclusionFileButton);
             this.ConfigTab.Controls.Add(this.PushExclusionFileButton);
             this.ConfigTab.Controls.Add(this.FindFileButton);
-            this.ConfigTab.Location = new System.Drawing.Point(4, 22);
+            this.ConfigTab.Location = new System.Drawing.Point(4, 25);
+            this.ConfigTab.Margin = new System.Windows.Forms.Padding(4);
             this.ConfigTab.Name = "ConfigTab";
-            this.ConfigTab.Padding = new System.Windows.Forms.Padding(3);
-            this.ConfigTab.Size = new System.Drawing.Size(296, 298);
+            this.ConfigTab.Padding = new System.Windows.Forms.Padding(4);
+            this.ConfigTab.Size = new System.Drawing.Size(289, 370);
             this.ConfigTab.TabIndex = 2;
             this.ConfigTab.Text = "Sonar";
             this.ConfigTab.UseVisualStyleBackColor = true;
             // 
             // ResetButton
             // 
-            this.ResetButton.Location = new System.Drawing.Point(9, 269);
-            this.ResetButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.ResetButton.Location = new System.Drawing.Point(12, 331);
+            this.ResetButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ResetButton.Name = "ResetButton";
-            this.ResetButton.Size = new System.Drawing.Size(282, 23);
+            this.ResetButton.Size = new System.Drawing.Size(376, 28);
             this.ResetButton.TabIndex = 25;
             this.ResetButton.Text = "Reset";
             this.ResetButton.UseVisualStyleBackColor = true;
@@ -871,18 +850,20 @@
             // ProjectPathLabel
             // 
             this.ProjectPathLabel.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.ProjectPathLabel.Location = new System.Drawing.Point(9, 196);
+            this.ProjectPathLabel.Location = new System.Drawing.Point(12, 241);
+            this.ProjectPathLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ProjectPathLabel.Name = "ProjectPathLabel";
-            this.ProjectPathLabel.Size = new System.Drawing.Size(227, 19);
+            this.ProjectPathLabel.Size = new System.Drawing.Size(303, 23);
             this.ProjectPathLabel.TabIndex = 24;
             this.ProjectPathLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // PathLabel
             // 
             this.PathLabel.AutoSize = true;
-            this.PathLabel.Location = new System.Drawing.Point(9, 178);
+            this.PathLabel.Location = new System.Drawing.Point(12, 219);
+            this.PathLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PathLabel.Name = "PathLabel";
-            this.PathLabel.Size = new System.Drawing.Size(54, 13);
+            this.PathLabel.Size = new System.Drawing.Size(71, 17);
             this.PathLabel.TabIndex = 24;
             this.PathLabel.Text = "File Path: ";
             // 
@@ -890,10 +871,9 @@
             // 
             this.SelectConfigurationFileTypeLabel.AutoSize = true;
             this.SelectConfigurationFileTypeLabel.Enabled = false;
-            this.SelectConfigurationFileTypeLabel.Location = new System.Drawing.Point(9, 11);
-            this.SelectConfigurationFileTypeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.SelectConfigurationFileTypeLabel.Location = new System.Drawing.Point(12, 14);
             this.SelectConfigurationFileTypeLabel.Name = "SelectConfigurationFileTypeLabel";
-            this.SelectConfigurationFileTypeLabel.Size = new System.Drawing.Size(199, 13);
+            this.SelectConfigurationFileTypeLabel.Size = new System.Drawing.Size(265, 17);
             this.SelectConfigurationFileTypeLabel.TabIndex = 23;
             this.SelectConfigurationFileTypeLabel.Text = "Select a framework or type the file name:";
             // 
@@ -901,10 +881,9 @@
             // 
             this.FileNameLabel.AutoSize = true;
             this.FileNameLabel.Enabled = false;
-            this.FileNameLabel.Location = new System.Drawing.Point(9, 128);
-            this.FileNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.FileNameLabel.Location = new System.Drawing.Point(12, 158);
             this.FileNameLabel.Name = "FileNameLabel";
-            this.FileNameLabel.Size = new System.Drawing.Size(54, 13);
+            this.FileNameLabel.Size = new System.Drawing.Size(71, 17);
             this.FileNameLabel.TabIndex = 23;
             this.FileNameLabel.Text = "FileName:";
             // 
@@ -912,18 +891,19 @@
             // 
             this.FileNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.FileNameTextBox.Enabled = false;
-            this.FileNameTextBox.Location = new System.Drawing.Point(85, 126);
-            this.FileNameTextBox.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.FileNameTextBox.Location = new System.Drawing.Point(113, 155);
+            this.FileNameTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.FileNameTextBox.Name = "FileNameTextBox";
-            this.FileNameTextBox.Size = new System.Drawing.Size(206, 20);
+            this.FileNameTextBox.Size = new System.Drawing.Size(274, 22);
             this.FileNameTextBox.TabIndex = 22;
             // 
             // FindFileCustomRadioButton
             // 
             this.FindFileCustomRadioButton.AutoSize = true;
-            this.FindFileCustomRadioButton.Location = new System.Drawing.Point(9, 101);
+            this.FindFileCustomRadioButton.Location = new System.Drawing.Point(12, 124);
+            this.FindFileCustomRadioButton.Margin = new System.Windows.Forms.Padding(4);
             this.FindFileCustomRadioButton.Name = "FindFileCustomRadioButton";
-            this.FindFileCustomRadioButton.Size = new System.Drawing.Size(79, 17);
+            this.FindFileCustomRadioButton.Size = new System.Drawing.Size(102, 21);
             this.FindFileCustomRadioButton.TabIndex = 21;
             this.FindFileCustomRadioButton.Text = "Custom File";
             this.FindFileCustomRadioButton.UseVisualStyleBackColor = true;
@@ -932,9 +912,10 @@
             // FindFileReactNativeRadioButton
             // 
             this.FindFileReactNativeRadioButton.AutoSize = true;
-            this.FindFileReactNativeRadioButton.Location = new System.Drawing.Point(9, 78);
+            this.FindFileReactNativeRadioButton.Location = new System.Drawing.Point(12, 96);
+            this.FindFileReactNativeRadioButton.Margin = new System.Windows.Forms.Padding(4);
             this.FindFileReactNativeRadioButton.Name = "FindFileReactNativeRadioButton";
-            this.FindFileReactNativeRadioButton.Size = new System.Drawing.Size(85, 17);
+            this.FindFileReactNativeRadioButton.Size = new System.Drawing.Size(106, 21);
             this.FindFileReactNativeRadioButton.TabIndex = 20;
             this.FindFileReactNativeRadioButton.Text = "ReactNative";
             this.FindFileReactNativeRadioButton.UseVisualStyleBackColor = true;
@@ -942,9 +923,10 @@
             // FindFileiOSRadioButton
             // 
             this.FindFileiOSRadioButton.AutoSize = true;
-            this.FindFileiOSRadioButton.Location = new System.Drawing.Point(9, 55);
+            this.FindFileiOSRadioButton.Location = new System.Drawing.Point(12, 68);
+            this.FindFileiOSRadioButton.Margin = new System.Windows.Forms.Padding(4);
             this.FindFileiOSRadioButton.Name = "FindFileiOSRadioButton";
-            this.FindFileiOSRadioButton.Size = new System.Drawing.Size(133, 17);
+            this.FindFileiOSRadioButton.Size = new System.Drawing.Size(171, 21);
             this.FindFileiOSRadioButton.TabIndex = 19;
             this.FindFileiOSRadioButton.Text = "iOS Native SDK (Swift)";
             this.FindFileiOSRadioButton.UseVisualStyleBackColor = true;
@@ -953,9 +935,10 @@
             // 
             this.FindFileAndroidRadioButton.AutoSize = true;
             this.FindFileAndroidRadioButton.Checked = true;
-            this.FindFileAndroidRadioButton.Location = new System.Drawing.Point(9, 32);
+            this.FindFileAndroidRadioButton.Location = new System.Drawing.Point(12, 39);
+            this.FindFileAndroidRadioButton.Margin = new System.Windows.Forms.Padding(4);
             this.FindFileAndroidRadioButton.Name = "FindFileAndroidRadioButton";
-            this.FindFileAndroidRadioButton.Size = new System.Drawing.Size(155, 17);
+            this.FindFileAndroidRadioButton.Size = new System.Drawing.Size(203, 21);
             this.FindFileAndroidRadioButton.TabIndex = 12;
             this.FindFileAndroidRadioButton.TabStop = true;
             this.FindFileAndroidRadioButton.Text = "Android Native SDK (Kotlin)";
@@ -963,10 +946,10 @@
             // 
             // DeleteSonarCloudExclusionFileButton
             // 
-            this.DeleteSonarCloudExclusionFileButton.Location = new System.Drawing.Point(9, 243);
-            this.DeleteSonarCloudExclusionFileButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.DeleteSonarCloudExclusionFileButton.Location = new System.Drawing.Point(12, 299);
+            this.DeleteSonarCloudExclusionFileButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DeleteSonarCloudExclusionFileButton.Name = "DeleteSonarCloudExclusionFileButton";
-            this.DeleteSonarCloudExclusionFileButton.Size = new System.Drawing.Size(282, 23);
+            this.DeleteSonarCloudExclusionFileButton.Size = new System.Drawing.Size(376, 28);
             this.DeleteSonarCloudExclusionFileButton.TabIndex = 17;
             this.DeleteSonarCloudExclusionFileButton.Text = "Delete SonarCloud Configuration File";
             this.DeleteSonarCloudExclusionFileButton.UseVisualStyleBackColor = true;
@@ -974,10 +957,10 @@
             // 
             // PushExclusionFileButton
             // 
-            this.PushExclusionFileButton.Location = new System.Drawing.Point(9, 218);
-            this.PushExclusionFileButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.PushExclusionFileButton.Location = new System.Drawing.Point(12, 268);
+            this.PushExclusionFileButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PushExclusionFileButton.Name = "PushExclusionFileButton";
-            this.PushExclusionFileButton.Size = new System.Drawing.Size(282, 23);
+            this.PushExclusionFileButton.Size = new System.Drawing.Size(376, 28);
             this.PushExclusionFileButton.TabIndex = 17;
             this.PushExclusionFileButton.Text = "Push SonarCloud Configuration File";
             this.PushExclusionFileButton.UseVisualStyleBackColor = true;
@@ -985,10 +968,10 @@
             // 
             // FindFileButton
             // 
-            this.FindFileButton.Location = new System.Drawing.Point(9, 152);
-            this.FindFileButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.FindFileButton.Location = new System.Drawing.Point(12, 187);
+            this.FindFileButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.FindFileButton.Name = "FindFileButton";
-            this.FindFileButton.Size = new System.Drawing.Size(282, 23);
+            this.FindFileButton.Size = new System.Drawing.Size(376, 28);
             this.FindFileButton.TabIndex = 16;
             this.FindFileButton.Text = "Find Path";
             this.FindFileButton.UseVisualStyleBackColor = true;
@@ -1009,19 +992,20 @@
             this.ReportTab.Controls.Add(this.ComponentNumberDisplayLabel);
             this.ReportTab.Controls.Add(this.GetProjectMeasuresButton);
             this.ReportTab.Controls.Add(this.GetListOfSonarCloudProjectsButton);
-            this.ReportTab.Location = new System.Drawing.Point(4, 22);
+            this.ReportTab.Location = new System.Drawing.Point(4, 25);
+            this.ReportTab.Margin = new System.Windows.Forms.Padding(4);
             this.ReportTab.Name = "ReportTab";
-            this.ReportTab.Size = new System.Drawing.Size(296, 298);
+            this.ReportTab.Size = new System.Drawing.Size(289, 370);
             this.ReportTab.TabIndex = 4;
             this.ReportTab.Text = "Report";
             this.ReportTab.UseVisualStyleBackColor = true;
             // 
             // ExtractBugsButtons
             // 
-            this.ExtractBugsButtons.Location = new System.Drawing.Point(139, 239);
-            this.ExtractBugsButtons.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.ExtractBugsButtons.Location = new System.Drawing.Point(185, 294);
+            this.ExtractBugsButtons.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ExtractBugsButtons.Name = "ExtractBugsButtons";
-            this.ExtractBugsButtons.Size = new System.Drawing.Size(71, 23);
+            this.ExtractBugsButtons.Size = new System.Drawing.Size(95, 28);
             this.ExtractBugsButtons.TabIndex = 34;
             this.ExtractBugsButtons.Text = "Bug";
             this.ExtractBugsButtons.UseVisualStyleBackColor = true;
@@ -1029,10 +1013,10 @@
             // 
             // ExtractCodeSmellButton
             // 
-            this.ExtractCodeSmellButton.Location = new System.Drawing.Point(217, 239);
-            this.ExtractCodeSmellButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.ExtractCodeSmellButton.Location = new System.Drawing.Point(289, 294);
+            this.ExtractCodeSmellButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ExtractCodeSmellButton.Name = "ExtractCodeSmellButton";
-            this.ExtractCodeSmellButton.Size = new System.Drawing.Size(71, 23);
+            this.ExtractCodeSmellButton.Size = new System.Drawing.Size(95, 28);
             this.ExtractCodeSmellButton.TabIndex = 33;
             this.ExtractCodeSmellButton.Text = "Code Smell";
             this.ExtractCodeSmellButton.UseVisualStyleBackColor = true;
@@ -1040,10 +1024,10 @@
             // 
             // ExtractIssuesButton
             // 
-            this.ExtractIssuesButton.Location = new System.Drawing.Point(7, 239);
-            this.ExtractIssuesButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.ExtractIssuesButton.Location = new System.Drawing.Point(9, 294);
+            this.ExtractIssuesButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ExtractIssuesButton.Name = "ExtractIssuesButton";
-            this.ExtractIssuesButton.Size = new System.Drawing.Size(125, 23);
+            this.ExtractIssuesButton.Size = new System.Drawing.Size(167, 28);
             this.ExtractIssuesButton.TabIndex = 33;
             this.ExtractIssuesButton.Text = "Extract Issues";
             this.ExtractIssuesButton.UseVisualStyleBackColor = true;
@@ -1053,28 +1037,30 @@
             // 
             this.FinalStatusReportLabel.AutoSize = true;
             this.FinalStatusReportLabel.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.FinalStatusReportLabel.Location = new System.Drawing.Point(6, 202);
-            this.FinalStatusReportLabel.MaximumSize = new System.Drawing.Size(280, 0);
+            this.FinalStatusReportLabel.Location = new System.Drawing.Point(8, 249);
+            this.FinalStatusReportLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.FinalStatusReportLabel.MaximumSize = new System.Drawing.Size(373, 0);
             this.FinalStatusReportLabel.Name = "FinalStatusReportLabel";
-            this.FinalStatusReportLabel.Size = new System.Drawing.Size(0, 13);
+            this.FinalStatusReportLabel.Size = new System.Drawing.Size(0, 17);
             this.FinalStatusReportLabel.TabIndex = 31;
             this.FinalStatusReportLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // FinalStatusReportDisplayLabel
             // 
             this.FinalStatusReportDisplayLabel.AutoSize = true;
-            this.FinalStatusReportDisplayLabel.Location = new System.Drawing.Point(6, 183);
+            this.FinalStatusReportDisplayLabel.Location = new System.Drawing.Point(8, 225);
+            this.FinalStatusReportDisplayLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.FinalStatusReportDisplayLabel.Name = "FinalStatusReportDisplayLabel";
-            this.FinalStatusReportDisplayLabel.Size = new System.Drawing.Size(100, 13);
+            this.FinalStatusReportDisplayLabel.Size = new System.Drawing.Size(133, 17);
             this.FinalStatusReportDisplayLabel.TabIndex = 32;
             this.FinalStatusReportDisplayLabel.Text = "Final Report Status:";
             // 
             // GenerateReportButton
             // 
-            this.GenerateReportButton.Location = new System.Drawing.Point(6, 154);
-            this.GenerateReportButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.GenerateReportButton.Location = new System.Drawing.Point(8, 190);
+            this.GenerateReportButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.GenerateReportButton.Name = "GenerateReportButton";
-            this.GenerateReportButton.Size = new System.Drawing.Size(282, 23);
+            this.GenerateReportButton.Size = new System.Drawing.Size(376, 28);
             this.GenerateReportButton.TabIndex = 30;
             this.GenerateReportButton.Text = "Filter completed projects and generate report";
             this.GenerateReportButton.UseVisualStyleBackColor = true;
@@ -1083,28 +1069,30 @@
             // ReportStatusLabel
             // 
             this.ReportStatusLabel.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.ReportStatusLabel.Location = new System.Drawing.Point(6, 129);
+            this.ReportStatusLabel.Location = new System.Drawing.Point(8, 159);
+            this.ReportStatusLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ReportStatusLabel.Name = "ReportStatusLabel";
-            this.ReportStatusLabel.Size = new System.Drawing.Size(282, 19);
+            this.ReportStatusLabel.Size = new System.Drawing.Size(376, 23);
             this.ReportStatusLabel.TabIndex = 28;
             this.ReportStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ReportStatusDisplayLabel
             // 
             this.ReportStatusDisplayLabel.AutoSize = true;
-            this.ReportStatusDisplayLabel.Location = new System.Drawing.Point(6, 110);
+            this.ReportStatusDisplayLabel.Location = new System.Drawing.Point(8, 135);
+            this.ReportStatusDisplayLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ReportStatusDisplayLabel.Name = "ReportStatusDisplayLabel";
-            this.ReportStatusDisplayLabel.Size = new System.Drawing.Size(84, 13);
+            this.ReportStatusDisplayLabel.Size = new System.Drawing.Size(111, 17);
             this.ReportStatusDisplayLabel.TabIndex = 29;
             this.ReportStatusDisplayLabel.Text = "Measure Status:";
             // 
             // ClearReportButton
             // 
             this.ClearReportButton.ForeColor = System.Drawing.Color.Maroon;
-            this.ClearReportButton.Location = new System.Drawing.Point(7, 268);
-            this.ClearReportButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.ClearReportButton.Location = new System.Drawing.Point(9, 330);
+            this.ClearReportButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ClearReportButton.Name = "ClearReportButton";
-            this.ClearReportButton.Size = new System.Drawing.Size(282, 23);
+            this.ClearReportButton.Size = new System.Drawing.Size(376, 28);
             this.ClearReportButton.TabIndex = 27;
             this.ClearReportButton.Text = "Clear and Reset";
             this.ClearReportButton.UseVisualStyleBackColor = true;
@@ -1113,27 +1101,29 @@
             // ComponentNumberLabel
             // 
             this.ComponentNumberLabel.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.ComponentNumberLabel.Location = new System.Drawing.Point(6, 54);
+            this.ComponentNumberLabel.Location = new System.Drawing.Point(8, 66);
+            this.ComponentNumberLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ComponentNumberLabel.Name = "ComponentNumberLabel";
-            this.ComponentNumberLabel.Size = new System.Drawing.Size(282, 19);
+            this.ComponentNumberLabel.Size = new System.Drawing.Size(376, 23);
             this.ComponentNumberLabel.TabIndex = 25;
             this.ComponentNumberLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ComponentNumberDisplayLabel
             // 
             this.ComponentNumberDisplayLabel.AutoSize = true;
-            this.ComponentNumberDisplayLabel.Location = new System.Drawing.Point(6, 37);
+            this.ComponentNumberDisplayLabel.Location = new System.Drawing.Point(8, 46);
+            this.ComponentNumberDisplayLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ComponentNumberDisplayLabel.Name = "ComponentNumberDisplayLabel";
-            this.ComponentNumberDisplayLabel.Size = new System.Drawing.Size(99, 13);
+            this.ComponentNumberDisplayLabel.Size = new System.Drawing.Size(132, 17);
             this.ComponentNumberDisplayLabel.TabIndex = 26;
             this.ComponentNumberDisplayLabel.Text = "Number of projects:";
             // 
             // GetProjectMeasuresButton
             // 
-            this.GetProjectMeasuresButton.Location = new System.Drawing.Point(6, 81);
-            this.GetProjectMeasuresButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.GetProjectMeasuresButton.Location = new System.Drawing.Point(8, 100);
+            this.GetProjectMeasuresButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.GetProjectMeasuresButton.Name = "GetProjectMeasuresButton";
-            this.GetProjectMeasuresButton.Size = new System.Drawing.Size(282, 23);
+            this.GetProjectMeasuresButton.Size = new System.Drawing.Size(376, 28);
             this.GetProjectMeasuresButton.TabIndex = 19;
             this.GetProjectMeasuresButton.Text = "Get project measures for the selected projects";
             this.GetProjectMeasuresButton.UseVisualStyleBackColor = true;
@@ -1141,24 +1131,57 @@
             // 
             // GetListOfSonarCloudProjectsButton
             // 
-            this.GetListOfSonarCloudProjectsButton.Location = new System.Drawing.Point(6, 8);
-            this.GetListOfSonarCloudProjectsButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.GetListOfSonarCloudProjectsButton.Location = new System.Drawing.Point(8, 10);
+            this.GetListOfSonarCloudProjectsButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.GetListOfSonarCloudProjectsButton.Name = "GetListOfSonarCloudProjectsButton";
-            this.GetListOfSonarCloudProjectsButton.Size = new System.Drawing.Size(282, 23);
+            this.GetListOfSonarCloudProjectsButton.Size = new System.Drawing.Size(376, 28);
             this.GetListOfSonarCloudProjectsButton.TabIndex = 18;
             this.GetListOfSonarCloudProjectsButton.Text = "Get projects from SonarCloud";
             this.GetListOfSonarCloudProjectsButton.UseVisualStyleBackColor = true;
             this.GetListOfSonarCloudProjectsButton.Click += new System.EventHandler(this.GetListOfSonarCloudProjectsButton_Click);
+            // 
+            // CodigaTab
+            // 
+            this.CodigaTab.Controls.Add(this.GetCodigaSelectedRepoAnalysis);
+            this.CodigaTab.Controls.Add(this.GetCodigaRepoBtn);
+            this.CodigaTab.Location = new System.Drawing.Point(4, 25);
+            this.CodigaTab.Margin = new System.Windows.Forms.Padding(4);
+            this.CodigaTab.Name = "CodigaTab";
+            this.CodigaTab.Padding = new System.Windows.Forms.Padding(4);
+            this.CodigaTab.Size = new System.Drawing.Size(289, 370);
+            this.CodigaTab.TabIndex = 5;
+            this.CodigaTab.Text = "Codiga";
+            this.CodigaTab.UseVisualStyleBackColor = true;
+            // 
+            // GetCodigaSelectedRepoAnalysis
+            // 
+            this.GetCodigaSelectedRepoAnalysis.Location = new System.Drawing.Point(18, 66);
+            this.GetCodigaSelectedRepoAnalysis.Name = "GetCodigaSelectedRepoAnalysis";
+            this.GetCodigaSelectedRepoAnalysis.Size = new System.Drawing.Size(255, 34);
+            this.GetCodigaSelectedRepoAnalysis.TabIndex = 1;
+            this.GetCodigaSelectedRepoAnalysis.Text = "Get selected repo analysis\r\n";
+            this.GetCodigaSelectedRepoAnalysis.UseVisualStyleBackColor = true;
+            this.GetCodigaSelectedRepoAnalysis.Click += new System.EventHandler(this.GetCodigaSelectedRepoAnalysis_Click);
+            // 
+            // GetCodigaRepoBtn
+            // 
+            this.GetCodigaRepoBtn.Location = new System.Drawing.Point(18, 18);
+            this.GetCodigaRepoBtn.Name = "GetCodigaRepoBtn";
+            this.GetCodigaRepoBtn.Size = new System.Drawing.Size(256, 32);
+            this.GetCodigaRepoBtn.TabIndex = 0;
+            this.GetCodigaRepoBtn.Text = "Get Codiga repositories\r\n\r\n";
+            this.GetCodigaRepoBtn.UseVisualStyleBackColor = true;
+            this.GetCodigaRepoBtn.Click += new System.EventHandler(this.GetCodigaRepoBtn_Click);
             // 
             // SelectAllButton
             // 
             this.SelectAllButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.SelectAllButton.Enabled = false;
             this.SelectAllButton.Font = new System.Drawing.Font("Segoe MDL2 Assets", 8.25F);
-            this.SelectAllButton.Location = new System.Drawing.Point(377, 8);
-            this.SelectAllButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.SelectAllButton.Location = new System.Drawing.Point(606, 10);
+            this.SelectAllButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.SelectAllButton.Name = "SelectAllButton";
-            this.SelectAllButton.Size = new System.Drawing.Size(25, 25);
+            this.SelectAllButton.Size = new System.Drawing.Size(33, 31);
             this.SelectAllButton.TabIndex = 12;
             this.SelectAllButton.Text = "";
             this.SelectAllButton.UseVisualStyleBackColor = true;
@@ -1169,10 +1192,10 @@
             this.ClearSelectionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ClearSelectionButton.Enabled = false;
             this.ClearSelectionButton.Font = new System.Drawing.Font("Segoe MDL2 Assets", 8.25F);
-            this.ClearSelectionButton.Location = new System.Drawing.Point(350, 8);
-            this.ClearSelectionButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.ClearSelectionButton.Location = new System.Drawing.Point(570, 10);
+            this.ClearSelectionButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ClearSelectionButton.Name = "ClearSelectionButton";
-            this.ClearSelectionButton.Size = new System.Drawing.Size(25, 25);
+            this.ClearSelectionButton.Size = new System.Drawing.Size(33, 31);
             this.ClearSelectionButton.TabIndex = 11;
             this.ClearSelectionButton.Text = "";
             this.ClearSelectionButton.UseVisualStyleBackColor = true;
@@ -1183,10 +1206,10 @@
             this.StopProcessButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.StopProcessButton.Enabled = false;
             this.StopProcessButton.Font = new System.Drawing.Font("Segoe MDL2 Assets", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StopProcessButton.Location = new System.Drawing.Point(404, 8);
-            this.StopProcessButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.StopProcessButton.Location = new System.Drawing.Point(642, 10);
+            this.StopProcessButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.StopProcessButton.Name = "StopProcessButton";
-            this.StopProcessButton.Size = new System.Drawing.Size(25, 25);
+            this.StopProcessButton.Size = new System.Drawing.Size(33, 31);
             this.StopProcessButton.TabIndex = 9;
             this.StopProcessButton.Text = "";
             this.StopProcessButton.UseVisualStyleBackColor = true;
@@ -1195,20 +1218,18 @@
             // ResultsCountLabel
             // 
             this.ResultsCountLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.ResultsCountLabel.Location = new System.Drawing.Point(1, 388);
-            this.ResultsCountLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.ResultsCountLabel.Location = new System.Drawing.Point(1, 478);
             this.ResultsCountLabel.Name = "ResultsCountLabel";
-            this.ResultsCountLabel.Size = new System.Drawing.Size(155, 13);
+            this.ResultsCountLabel.Size = new System.Drawing.Size(207, 16);
             this.ResultsCountLabel.TabIndex = 6;
             this.ResultsCountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // TotalItemFoundLabel
             // 
             this.TotalItemFoundLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.TotalItemFoundLabel.Location = new System.Drawing.Point(300, 388);
-            this.TotalItemFoundLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.TotalItemFoundLabel.Location = new System.Drawing.Point(503, 478);
             this.TotalItemFoundLabel.Name = "TotalItemFoundLabel";
-            this.TotalItemFoundLabel.Size = new System.Drawing.Size(152, 13);
+            this.TotalItemFoundLabel.Size = new System.Drawing.Size(203, 16);
             this.TotalItemFoundLabel.TabIndex = 9;
             this.TotalItemFoundLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -1218,6 +1239,7 @@
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer1.IsSplitterFixed = true;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -1245,17 +1267,19 @@
             this.splitContainer1.Panel2.Controls.Add(this.SelectAllButton);
             this.splitContainer1.Panel2.Controls.Add(this.ResultsCountLabel);
             this.splitContainer1.Panel2.Controls.Add(this.StopProcessButton);
-            this.splitContainer1.Size = new System.Drawing.Size(795, 408);
+            this.splitContainer1.Size = new System.Drawing.Size(1060, 502);
             this.splitContainer1.SplitterDistance = 325;
+            this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 13;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.pictureBox3.Image = global::EtsGitTools.Properties.Resources.SonarCloudH;
-            this.pictureBox3.Location = new System.Drawing.Point(93, 368);
+            this.pictureBox3.Location = new System.Drawing.Point(70, 453);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(123, 34);
+            this.pictureBox3.Size = new System.Drawing.Size(164, 42);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 12;
             this.pictureBox3.TabStop = false;
@@ -1264,10 +1288,10 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.pictureBox1.Image = global::EtsGitTools.Properties.Resources.GitHub_Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(220, 368);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(239, 453);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(65, 34);
+            this.pictureBox1.Size = new System.Drawing.Size(87, 42);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
@@ -1276,10 +1300,10 @@
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.pictureBox2.Image = global::EtsGitTools.Properties.Resources.ETS;
-            this.pictureBox2.Location = new System.Drawing.Point(43, 368);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.pictureBox2.Location = new System.Drawing.Point(3, 453);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(46, 34);
+            this.pictureBox2.Size = new System.Drawing.Size(61, 42);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
@@ -1289,10 +1313,10 @@
             this.CopyItemAddressButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CopyItemAddressButton.Enabled = false;
             this.CopyItemAddressButton.Font = new System.Drawing.Font("Segoe MDL2 Assets", 8.25F);
-            this.CopyItemAddressButton.Location = new System.Drawing.Point(264, 8);
-            this.CopyItemAddressButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.CopyItemAddressButton.Location = new System.Drawing.Point(455, 10);
+            this.CopyItemAddressButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CopyItemAddressButton.Name = "CopyItemAddressButton";
-            this.CopyItemAddressButton.Size = new System.Drawing.Size(25, 25);
+            this.CopyItemAddressButton.Size = new System.Drawing.Size(33, 31);
             this.CopyItemAddressButton.TabIndex = 18;
             this.CopyItemAddressButton.Text = "";
             this.CopyItemAddressButton.UseVisualStyleBackColor = true;
@@ -1302,10 +1326,10 @@
             // 
             this.FindButton.Enabled = false;
             this.FindButton.Font = new System.Drawing.Font("Segoe MDL2 Assets", 8.25F);
-            this.FindButton.Location = new System.Drawing.Point(209, 8);
-            this.FindButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.FindButton.Location = new System.Drawing.Point(279, 10);
+            this.FindButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.FindButton.Name = "FindButton";
-            this.FindButton.Size = new System.Drawing.Size(25, 25);
+            this.FindButton.Size = new System.Drawing.Size(33, 31);
             this.FindButton.TabIndex = 17;
             this.FindButton.Text = "";
             this.FindButton.UseVisualStyleBackColor = true;
@@ -1314,9 +1338,10 @@
             // SearchTextBox
             // 
             this.SearchTextBox.Enabled = false;
-            this.SearchTextBox.Location = new System.Drawing.Point(2, 10);
+            this.SearchTextBox.Location = new System.Drawing.Point(3, 12);
+            this.SearchTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.SearchTextBox.Name = "SearchTextBox";
-            this.SearchTextBox.Size = new System.Drawing.Size(203, 20);
+            this.SearchTextBox.Size = new System.Drawing.Size(269, 22);
             this.SearchTextBox.TabIndex = 16;
             // 
             // LoadButton
@@ -1324,10 +1349,10 @@
             this.LoadButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LoadButton.Enabled = false;
             this.LoadButton.Font = new System.Drawing.Font("Segoe MDL2 Assets", 8.25F);
-            this.LoadButton.Location = new System.Drawing.Point(292, 8);
-            this.LoadButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.LoadButton.Location = new System.Drawing.Point(492, 10);
+            this.LoadButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LoadButton.Name = "LoadButton";
-            this.LoadButton.Size = new System.Drawing.Size(25, 25);
+            this.LoadButton.Size = new System.Drawing.Size(33, 31);
             this.LoadButton.TabIndex = 15;
             this.LoadButton.Text = "";
             this.LoadButton.UseVisualStyleBackColor = true;
@@ -1338,10 +1363,10 @@
             this.SaveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.SaveButton.Enabled = false;
             this.SaveButton.Font = new System.Drawing.Font("Segoe MDL2 Assets", 8.25F);
-            this.SaveButton.Location = new System.Drawing.Point(321, 8);
-            this.SaveButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.SaveButton.Location = new System.Drawing.Point(531, 10);
+            this.SaveButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(25, 25);
+            this.SaveButton.Size = new System.Drawing.Size(33, 31);
             this.SaveButton.TabIndex = 14;
             this.SaveButton.Text = "";
             this.SaveButton.UseVisualStyleBackColor = true;
@@ -1350,10 +1375,9 @@
             // SelectedCountLabel
             // 
             this.SelectedCountLabel.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.SelectedCountLabel.Location = new System.Drawing.Point(151, 388);
-            this.SelectedCountLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.SelectedCountLabel.Location = new System.Drawing.Point(256, 478);
             this.SelectedCountLabel.Name = "SelectedCountLabel";
-            this.SelectedCountLabel.Size = new System.Drawing.Size(155, 13);
+            this.SelectedCountLabel.Size = new System.Drawing.Size(207, 16);
             this.SelectedCountLabel.TabIndex = 13;
             this.SelectedCountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -1361,10 +1385,10 @@
             // 
             this.SpinnerPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.SpinnerPictureBox.Image = global::EtsGitTools.Properties.Resources.spinner;
-            this.SpinnerPictureBox.Location = new System.Drawing.Point(237, 10);
-            this.SpinnerPictureBox.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.SpinnerPictureBox.Location = new System.Drawing.Point(419, 12);
+            this.SpinnerPictureBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.SpinnerPictureBox.Name = "SpinnerPictureBox";
-            this.SpinnerPictureBox.Size = new System.Drawing.Size(25, 20);
+            this.SpinnerPictureBox.Size = new System.Drawing.Size(33, 25);
             this.SpinnerPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.SpinnerPictureBox.TabIndex = 11;
             this.SpinnerPictureBox.TabStop = false;
@@ -1374,10 +1398,10 @@
             // 
             this.ClearListButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ClearListButton.Enabled = false;
-            this.ClearListButton.Location = new System.Drawing.Point(431, 8);
-            this.ClearListButton.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.ClearListButton.Location = new System.Drawing.Point(678, 10);
+            this.ClearListButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ClearListButton.Name = "ClearListButton";
-            this.ClearListButton.Size = new System.Drawing.Size(25, 25);
+            this.ClearListButton.Size = new System.Drawing.Size(33, 31);
             this.ClearListButton.TabIndex = 4;
             this.ClearListButton.Text = "🗑";
             this.ClearListButton.UseVisualStyleBackColor = true;
@@ -1385,13 +1409,13 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(795, 408);
+            this.ClientSize = new System.Drawing.Size(1060, 502);
             this.Controls.Add(this.splitContainer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.MinimumSize = new System.Drawing.Size(811, 439);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MinimumSize = new System.Drawing.Size(1075, 529);
             this.Name = "MainForm";
             this.Text = "EtsGitTools";
             this.TabControl.ResumeLayout(false);
@@ -1405,6 +1429,7 @@
             this.ConfigTab.PerformLayout();
             this.ReportTab.ResumeLayout(false);
             this.ReportTab.PerformLayout();
+            this.CodigaTab.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
@@ -1415,8 +1440,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpinnerPictureBox)).EndInit();
             this.ResumeLayout(false);
-
         }
+
+        private System.Windows.Forms.Button GetCodigaRepoBtn;
+        private System.Windows.Forms.Button GetCodigaSelectedRepoAnalysis;
+
+        private System.Windows.Forms.TabPage CodigaTab;
 
         #endregion
 

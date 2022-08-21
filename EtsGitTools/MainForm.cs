@@ -1528,10 +1528,10 @@ namespace EtsGitTools
                         Query = @" {projects(howmany:5, skip: 0){id name}}"
                     };
 
-                    var response = await client.SendQueryAsync<JObject>(querry).ConfigureAwait(false);
+                    var response = await client.SendQueryAsync<CodigaModel.ProjectListResponse>(querry);
                     if (response.AsGraphQLHttpResponse().StatusCode == HttpStatusCode.OK)
                     {
-                        MessageBox.Show(response.Data.ToString());
+                        MessageBox.Show(response.Data.Projects[0].name);
 
                     }
                 }

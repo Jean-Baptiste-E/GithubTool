@@ -204,6 +204,10 @@
       <Project>{086a3855-4108-49f7-8b35-fb9dd037bf09}</Project>
       <Name>SonarCloudModel</Name>
     </ProjectReference>
+    <ProjectReference Include="CodigaModel\CodigaModel.csproj">
+      <Project>{cd5597f5-f499-4327-8dcb-e1c5f23c3feb}</Project>
+      <Name>CodigaModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\spinner.gif" />

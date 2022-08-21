@@ -4,10 +4,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GithubHelperTool", "GithubHelperTool.csproj", "{3ADB3A7A-CC2E-4C20-A3AC-9225071E2A90}"
+	ProjectSection(ProjectDependencies) = postProject
+		{71384751-8385-4186-99BD-0926730C2E41} = {71384751-8385-4186-99BD-0926730C2E41}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "..\Model\Model.csproj", "{46D2B19B-0126-4341-83F6-C33728C4FF05}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SonarCloudModel", "..\SonarCloudModel\SonarCloudModel.csproj", "{086A3855-4108-49F7-8B35-FB9DD037BF09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodigaModel", "CodigaModel\CodigaModel.csproj", "{CD5597F5-F499-4327-8DCB-E1C5F23C3FEB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +32,10 @@ Global
 		{086A3855-4108-49F7-8B35-FB9DD037BF09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{086A3855-4108-49F7-8B35-FB9DD037BF09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{086A3855-4108-49F7-8B35-FB9DD037BF09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD5597F5-F499-4327-8DCB-E1C5F23C3FEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD5597F5-F499-4327-8DCB-E1C5F23C3FEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD5597F5-F499-4327-8DCB-E1C5F23C3FEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD5597F5-F499-4327-8DCB-E1C5F23C3FEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

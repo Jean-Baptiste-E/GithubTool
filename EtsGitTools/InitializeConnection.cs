@@ -53,6 +53,7 @@ namespace EtsGitTools
                     Username = UsernameTextBox.Text,
                     Password = PasswordTextBox.Text,
                     Token = TokenTextBox.Text,
+                    CodigaToken = CodigaTokenTextBox.Text,
                 };
                 WriteUserCredentialFiles();
                 Close();
@@ -82,6 +83,7 @@ namespace EtsGitTools
             UsernameTextBox.Text = userInfo.Username;
             PasswordTextBox.Text = userInfo.Password;
             TokenTextBox.Text = userInfo.Token;
+            CodigaTokenTextBox.Text = userInfo.CodigaToken;
         }
 
         private void WriteUserCredentialFiles()
@@ -97,5 +99,6 @@ namespace EtsGitTools
                 configFileStream.Write(contentBytes, 0, contentBytes.Length);
             }
         }
+        
     }
 }

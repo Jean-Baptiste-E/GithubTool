@@ -139,6 +139,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\GraphQLClientHelper.cs" />
     <Compile Include="Helpers\StringEncryption.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>

@@ -18,6 +18,9 @@ using SonarCloudModel;
 using SonarCloudModel.Measure;
 using CsvHelper;
 using System.Globalization;
+using System.Net;
+using GraphQL.Client.Http;
+using Newtonsoft.Json.Linq;
 using SonarCloudModel.Report;
 using SonarCloudModel.Issue;
 
@@ -1513,10 +1516,34 @@ namespace EtsGitTools
             }
         }
 
-        private void GetCodigaRepoBtn_Click(object sender, EventArgs e)
+        private async void GetCodigaRepoBtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("clicked");
 
+            try
+            {
+                using (var client = GraphQLClientHelper.CreateCodigaGraphQlHttpClient(UserHelper.User.CodigaToken))
+                {
+                    var querry = new GraphQLHttpRequest
+                    {
+                        Query = @" {projects(howmany:5, skip: 0){id name}}"
+                    };
+
+                    var response = await client.SendQueryAsync<JObject>(querry).ConfigureAwait(false);
+                    if (response.AsGraphQLHttpResponse().StatusCode == HttpStatusCode.OK)
+                    {
+                        MessageBox.Show(response.Data.ToString());
+
+                    }
+                }
+                
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+                MessageBox.Show(exception.ToString());
+                throw;
+            }
+            
         }
 
         private void GetCodigaSelectedRepoAnalysis_Click(object sender, EventArgs e)

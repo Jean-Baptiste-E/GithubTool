@@ -19,16 +19,19 @@ using SonarCloudModel.Measure;
 using CsvHelper;
 using System.Globalization;
 using System.Net;
+using CodigaModel;
 using GraphQL.Client.Http;
 using Newtonsoft.Json.Linq;
 using SonarCloudModel.Report;
 using SonarCloudModel.Issue;
+using ProjectListResponse = SonarCloudModel.ProjectListResponse;
 
 namespace EtsGitTools
 {
     public partial class MainForm : Form
     {
         private List<Component> projectList = new List<Component>();
+        private List<Project> codigaProjectList = new List<Project>();
         List<ReportResult> metricResultList = new List<ReportResult>();
         List<Issue> issueList = new List<Issue>();
         private SemaphoreSlim semaphore = new SemaphoreSlim(1, 1);
@@ -1518,37 +1521,79 @@ namespace EtsGitTools
 
         private async void GetCodigaRepoBtn_Click(object sender, EventArgs e)
         {
-
             try
             {
+                IsInProgress = true;
                 using (var client = GraphQLClientHelper.CreateCodigaGraphQlHttpClient(UserHelper.User.CodigaToken))
                 {
                     var querry = new GraphQLHttpRequest
                     {
-                        Query = @" {projects(howmany:5, skip: 0){id name}}"
+                        Query = @" {projects(howmany:10, skip: 0){id name}}"
                     };
 
                     var response = await client.SendQueryAsync<CodigaModel.ProjectListResponse>(querry);
                     if (response.AsGraphQLHttpResponse().StatusCode == HttpStatusCode.OK)
                     {
-                        MessageBox.Show(response.Data.Projects[0].name);
+                        var projects = response.Data.Projects;
+                        codigaProjectList.AddRange(projects);
+                        MessageBox.Show($"{codigaProjectList.Count} projects found on Codiga", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     }
                 }
-                
+
             }
             catch (Exception exception)
             {
-                Console.WriteLine(exception);
-                MessageBox.Show(exception.ToString());
-                throw;
+                MessageBox.Show($"Failed to recieve information from Codiga, Message: {exception}", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                IsInProgress = false;
             }
             
         }
 
-        private void GetCodigaSelectedRepoAnalysis_Click(object sender, EventArgs e)
+        private async void GetCodigaSelectedRepoAnalysis_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("clicked");
+            try
+            {
+                IsInProgress = true;
+                using (var client = GraphQLClientHelper.CreateCodigaGraphQlHttpClient(UserHelper.User.CodigaToken))
+                {
+                    if (codigaProjectList.Count > 0)
+                    {
+                        var querry = BuildCodigaAnalysisQuery(codigaProjectList[0].id);
+                        var response = await client.SendQueryAsync<JObject>(querry);
+                        var metrics = response.Data.First.First.First.First.First.First.Children();
+                        
+                        MessageBox.Show(metrics.ToString());
+                    }
+                    
+                }
+
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+                throw;
+            }
+
+            IsInProgress = false;
+        }
+
+        private GraphQLHttpRequest BuildCodigaAnalysisQuery(int projectId)
+        {
+            var querryString = "{project(id:" + $"{projectId} " + ") {lastAnalysis " +
+                         "{summary {duplicated_lines duplicated_linesPerSloc duplicates duplicatesPerSloc violations" +
+                         " violationsDocumentation violationsPerformance violationsDeployment violationsDesign " +
+                         "violationsSecurity violationsSafety violationsBest_practice violationsCode_style " +
+                         "violationsError_prone violationsUnknown}}}}";
+            var querry = new GraphQLHttpRequest()
+            {
+                Query = @"" + querryString
+            };
+
+            return querry;
         }
     }
 
